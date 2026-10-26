@@ -1,0 +1,85 @@
+* { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #222;
+  background: #fff;
+}
+
+.cabecera {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+.cabecera h1 { margin: 0; font-size: 1.6rem; }
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Listado de productos */
+.fila {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  align-items: center;
+  padding: 1.2rem 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+.fila-cabecera {
+  font-weight: bold;
+  font-size: 0.85rem;
+  border-bottom: 2px solid #999;
+}
+.fila h3 { margin: 0 0 0.4rem; font-size: 1.1rem; }
+.ref { font-size: 0.8rem; }
+
+.col-cantidad { display: flex; align-items: center; gap: 0.4rem; }
+.col-cantidad button {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+.col-cantidad button:disabled { opacity: 0.4; cursor: not-allowed; }
+.col-cantidad input {
+  width: 3rem;
+  height: 1.8rem;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
+/* Resumen */
+.resumen {
+  background: #e0e0e0;
+  padding: 1.5rem;
+  align-self: start;
+}
+.resumen h2 { margin: 0 0 1.5rem; }
+.linea-resumen, .linea-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+.linea-total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #888;
+  font-weight: bold;
+}
+
+.error { color: #b00020; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .contenedor { grid-template-columns: 1fr; padding: 1rem; }
+  .fila { grid-template-columns: 1fr 1fr; row-gap: 0.6rem; }
+}
